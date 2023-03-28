@@ -38,10 +38,6 @@ along with ao-cdn-data.  If not, see <https://www.gnu.org/licenses/>.
     <javadoc.breadcrumbs><![CDATA[<a target="${javadoc.target}" href="https://oss.aoapps.com/">AO OSS</a>
 / <a target="${javadoc.target}" href="https://oss.aoapps.com/cdn/">CDN</a>
 / <a target="${javadoc.target}" href="${project.url}">Data</a>]]></javadoc.breadcrumbs>
-    <!-- SonarQube -->
-    <sonar.projectKey>${project.groupId}:${project.artifactId}</sonar.projectKey>
-    <sonar.organization>ao-apps</sonar.organization>
-    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     <!-- Dependencies -->
     <spotbugs-annotations.version>4.7.3</spotbugs-annotations.version>
   </properties>
