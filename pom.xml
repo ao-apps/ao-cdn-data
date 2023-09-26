@@ -39,8 +39,6 @@ along with ao-cdn-data.  If not, see <https://www.gnu.org/licenses/>.
     <javadoc.breadcrumbs><![CDATA[<a target="${javadoc.target}" href="https://oss.aoapps.com/">AO OSS</a>
 / <a target="${javadoc.target}" href="https://oss.aoapps.com/cdn/">CDN</a>
 / <a target="${javadoc.target}" href="${project.url}">Data</a>]]></javadoc.breadcrumbs>
-    <!-- Dependencies -->
-    <spotbugs-annotations.version>4.7.3</spotbugs-annotations.version>
   </properties>
 
   <name>AO CDN Data</name>
@@ -171,7 +169,7 @@ along with ao-cdn-data.  If not, see <https://www.gnu.org/licenses/>.
                   <location>${project.build.directory}/offlineLinks/com.aoapps/ao-security</location>
                 </offlineLink>
                 <offlineLink>
-                  <url>https://javadoc.io/doc/com.github.spotbugs/spotbugs-annotations/${spotbugs-annotations.version}/</url>
+                  <url>https://javadoc.io/doc/com.github.spotbugs/spotbugs-annotations/${com.github.spotbugs:spotbugs-annotations:jar.version}/</url>
                   <location>${project.build.directory}/offlineLinks/com.github.spotbugs/spotbugs-annotations</location>
                 </offlineLink>
                 <!-- Test Direct -->
@@ -200,7 +198,7 @@ along with ao-cdn-data.  If not, see <https://www.gnu.org/licenses/>.
         <groupId>com.aoapps</groupId><artifactId>ao-security</artifactId><version>3.2.0${POST-SNAPSHOT}</version>
       </dependency>
       <dependency>
-        <groupId>com.github.spotbugs</groupId><artifactId>spotbugs-annotations</artifactId><version>${spotbugs-annotations.version}</version>
+        <groupId>com.github.spotbugs</groupId><artifactId>spotbugs-annotations</artifactId><version>4.7.3</version>
       </dependency>
       <!-- Transitive -->
       <dependency>
