@@ -25,6 +25,7 @@ package com.aoapps.cdn.data;
 
 import com.aoapps.lang.io.function.IOPredicate;
 import com.aoapps.security.SmallIdentifier;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -51,6 +52,7 @@ import java.util.logging.Level;
  *           xyz-(width)x(height).jpg would be scaled first frame
  * </p>
  */
+@SuppressFBWarnings("PI_DO_NOT_REUSE_PUBLIC_IDENTIFIERS_CLASS_NAMES")
 public class Resource {
 
   /**

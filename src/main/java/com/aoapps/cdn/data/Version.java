@@ -23,6 +23,7 @@
 
 package com.aoapps.cdn.data;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -34,6 +35,7 @@ import java.util.logging.Level;
 /**
  * One version of a resource.  A resource will always have the original version, and any number of derived versions.
  */
+@SuppressFBWarnings("PI_DO_NOT_REUSE_PUBLIC_IDENTIFIERS_CLASS_NAMES")
 public abstract class Version {
 
   final Resource resource;

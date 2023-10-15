@@ -24,6 +24,7 @@
 package com.aoapps.cdn.data;
 
 import com.aoapps.security.SmallIdentifier;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.nio.file.Files;
@@ -51,6 +52,7 @@ class ResourcesIterator implements Iterator<Resource> {
 
   private Resource next;
 
+  @SuppressFBWarnings("CT_CONSTRUCTOR_THROW")
   ResourcesIterator(Resources resources) throws IOException {
     this.resources = resources;
     hash1Iter = FileSystemUtils.list(resources.resourcesDir, Resources.resourcesDirFilter).iterator();

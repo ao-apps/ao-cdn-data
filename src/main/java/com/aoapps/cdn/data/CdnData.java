@@ -93,6 +93,7 @@ public class CdnData {
    * @see #fsck()
    * @see #fsck(boolean)
    */
+  @SuppressFBWarnings("CT_CONSTRUCTOR_THROW")
   public CdnData(Path cdnRoot, String csync2Group, boolean isUploader) throws IOException {
     this.cdnRoot = FileSystemUtils.makeDirectoryIfNeeded(
         null, // Never synchronize the root

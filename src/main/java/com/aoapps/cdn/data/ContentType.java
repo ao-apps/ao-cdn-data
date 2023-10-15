@@ -23,6 +23,7 @@
 
 package com.aoapps.cdn.data;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Objects;
@@ -30,7 +31,9 @@ import java.util.Objects;
 /**
  * Only a specific set of content types are supported by the CDN.
  */
+@SuppressFBWarnings("PI_DO_NOT_REUSE_PUBLIC_IDENTIFIERS_CLASS_NAMES")
 public enum ContentType {
+  @SuppressFBWarnings("PI_DO_NOT_REUSE_PUBLIC_IDENTIFIERS_FIELD_NAMES")
   JPEG {
     @Override
     public String getMimeType() {

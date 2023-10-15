@@ -24,6 +24,7 @@
 package com.aoapps.cdn.data;
 
 import com.aoapps.collections.AoCollections;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
 import java.nio.channels.FileLock;
@@ -64,6 +65,7 @@ class DirectoryLock implements AutoCloseable {
    * @see  Resources#lock(boolean)
    * @see  Resource#lock(boolean)
    */
+  @SuppressFBWarnings("CT_CONSTRUCTOR_THROW")
   DirectoryLock(Path dir, boolean shared) throws IOException {
     Path lockFile = dir.resolve(LOCK_FILE);
     boolean notExists = Files.notExists(lockFile, LinkOption.NOFOLLOW_LINKS);
