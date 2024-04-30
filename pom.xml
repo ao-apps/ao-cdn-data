@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 ao-cdn-data - API for accessing underlying content delivery network (CDN) data.
-Copyright (C) 2023  AO Industries, Inc.
+Copyright (C) 2023, 2024  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -198,7 +198,7 @@ along with ao-cdn-data.  If not, see <https://www.gnu.org/licenses/>.
         <groupId>com.aoapps</groupId><artifactId>ao-security</artifactId><version>3.2.0${POST-SNAPSHOT}</version>
       </dependency>
       <dependency>
-        <groupId>com.github.spotbugs</groupId><artifactId>spotbugs-annotations</artifactId><version>4.8.3</version>
+        <groupId>com.github.spotbugs</groupId><artifactId>spotbugs-annotations</artifactId><version>4.8.4</version>
       </dependency>
       <!-- Transitive -->
       <dependency>
