@@ -1,6 +1,6 @@
 /*
  * ao-cdn-data - API for accessing underlying content delivery network (CDN) data.
- * Copyright (C) 2023  AO Industries, Inc.
+ * Copyright (C) 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -466,8 +466,8 @@ public class Resources implements Iterable<Resource> {
   }
 
   /**
-   * Only one new identifier is created at a time since its availability is determined by present of directory
-   * or directory.new
+   * Only one new identifier is created at a time since its availability is determined by present of "directory"
+   * or "directory.new".
    */
   private static final Object newIdLock = new Object();
 
