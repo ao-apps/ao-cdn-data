@@ -431,10 +431,9 @@ public class Resources implements Iterable<Resource> {
 
   /**
    * Performs an integrity check on the resources directories on start-up.
-   * <p>
-   * {@link #lock(boolean) Locks the resources directory} with shared mode for runtime checks and exclusive mode
-   * when starting-up.
-   * </p>
+   *
+   * <p>{@link #lock(boolean) Locks the resources directory} with shared mode for runtime checks and exclusive mode
+   * when starting-up.</p>
    *
    * @param synchronizePaths Only non-null when in start-up mode and able to make filesystem modifications
    */
@@ -473,11 +472,10 @@ public class Resources implements Iterable<Resource> {
 
   /**
    * Adds a new resource, allocating a new *.tmp directory, using the given upload file as the original resource.
-   * <p>
-   * Holds {@linkplain #lock(boolean) an exclusive lock} to avoid possibly duplications of new resources.
+   *
+   * <p>Holds {@linkplain #lock(boolean) an exclusive lock} to avoid possibly duplications of new resources.
    * New resources are only added by the backoffice administrators, so concurrency is not important.
-   * The lock is released, however, before {@linkplain Csync2 synchronizing the cluster}.
-   * </p>
+   * The lock is released, however, before {@linkplain Csync2 synchronizing the cluster}.</p>
    */
   Resource addNewResource(Path tempFile, long tempFileSize, ContentType contentType) throws IOException {
     Path syncPath;

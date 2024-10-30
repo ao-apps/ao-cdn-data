@@ -1,6 +1,6 @@
 /*
  * ao-cdn-data - API for accessing underlying content delivery network (CDN) data.
- * Copyright (C) 2023  AO Industries, Inc.
+ * Copyright (C) 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -81,9 +81,8 @@ final class FileSystemUtils {
 
   /**
    * Creates a new directory, if needed, optionally including any parents.  Verifies any existing is a directory.
-   * <p>
-   * When supported, any new directory has permissions set to expected values.
-   * </p>
+   *
+   * <p>When supported, any new directory has permissions set to expected values.</p>
    *
    * @param csync2  When not {@code null}, will immediately synchronize the cluster when making a new directory
    * @param dir     The directory to create or verify
@@ -109,9 +108,8 @@ final class FileSystemUtils {
 
   /**
    * Creates a new directory, if needed, not including any parents.  Verifies any existing is a directory.
-   * <p>
-   * When supported, any new directory has permissions set to expected values.
-   * </p>
+   *
+   * <p>When supported, any new directory has permissions set to expected values.</p>
    *
    * @param csync2  When not {@code null}, will immediately synchronize the cluster when making a new directory
    * @param dir     The directory to create or verify

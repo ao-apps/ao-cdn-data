@@ -1,6 +1,6 @@
 /*
  * ao-cdn-data - API for accessing underlying content delivery network (CDN) data.
- * Copyright (C) 2023  AO Industries, Inc.
+ * Copyright (C) 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -34,9 +34,8 @@ import java.util.logging.Level;
 
 /**
  * Filesystem integrity checker.
- * <p>
- * TODO: This could be called on-occasion by monitoring, but on auction.* (for isUploader) and cdn.* (for !isUploader)
- * </p>
+ *
+ * <p>TODO: This could be called on-occasion by monitoring, but on auction.* (for isUploader) and cdn.* (for !isUploader)</p>
  */
 final class Fsck {
 

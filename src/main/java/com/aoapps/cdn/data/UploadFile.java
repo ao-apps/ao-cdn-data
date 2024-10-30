@@ -1,6 +1,6 @@
 /*
  * ao-cdn-data - API for accessing underlying content delivery network (CDN) data.
- * Copyright (C) 2023  AO Industries, Inc.
+ * Copyright (C) 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -31,10 +31,9 @@ import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * A file that is being uploaded, and may be partial/incomplete.
- * <p>
- * Once {@linkplain CdnData#findOrAdd(com.aoapps.cdn.data.UploadFile) added}, the uploaded
- * file must not be modified.
- * </p>
+ *
+ * <p>Once {@linkplain CdnData#findOrAdd(com.aoapps.cdn.data.UploadFile) added}, the uploaded
+ * file must not be modified.</p>
  *
  * @see  Uploads#createUploadFile(com.aoapps.cdn.data.ContentType)
  * @see  CdnData#findOrAdd(com.aoapps.cdn.data.UploadFile)
@@ -68,10 +67,9 @@ public class UploadFile {
   /**
    * Gets the temp file, which will be {@code null} (and previous underlying file will not exist) once
    * {@linkplain CdnData#findOrAdd(com.aoapps.cdn.data.UploadFile) added}.
-   * <p>
-   * When writing the file, it is suggested to {@link OutputStream#flush()} then {@link FileChannel#force(boolean)}
-   * or open channel with {@link StandardOpenOption#SYNC}.
-   * </p>
+   *
+   * <p>When writing the file, it is suggested to {@link OutputStream#flush()} then {@link FileChannel#force(boolean)}
+   * or open channel with {@link StandardOpenOption#SYNC}.</p>
    */
   public Path getTempFile() {
     return tempFile.get();

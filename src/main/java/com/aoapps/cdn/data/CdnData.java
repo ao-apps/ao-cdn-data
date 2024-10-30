@@ -1,6 +1,6 @@
 /*
  * ao-cdn-data - API for accessing underlying content delivery network (CDN) data.
- * Copyright (C) 2023  AO Industries, Inc.
+ * Copyright (C) 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -38,15 +38,14 @@ import java.util.logging.Logger;
 
 /**
  * Currently implemented directly in the filesystem, leveraging Csync2 in multi-master mode for replication.
- * <p>
- * TODO: Have a central warnings/errors structure.
+ *
+ * <p>TODO: Have a central warnings/errors structure.
  * Warnings by path for things that are anamolous (spelling), such as resource hash directories with unexpected names.
  * Warnings for things failed to auto-cleanup.
  * Errors by path for csync2 failures, could initialize state from a csync2 -t test.
  * Could background re-test either all csync2 or paths with known synchronization failures.
  * Could integrated into status page (or status.json).
- * Could integrated into AO monitoring.
- * </p>
+ * Could integrated into AO monitoring.</p>
  */
 public class CdnData {
 
@@ -179,23 +178,19 @@ public class CdnData {
 
   /**
    * Stores a new file in CDN data.
-   * <p>
-   * First searches all existing resources for a match, including matching derived resources.  A full byte-by-byte check
-   * is performed.
-   * </p>
-   * <p>
-   * When a match is found, the existing resource is returned.  This means that a higher quality resource may be
-   * returned than the one requested.
-   * </p>
+   *
+   * <p>First searches all existing resources for a match, including matching derived resources.  A full byte-by-byte check
+   * is performed.</p>
+   *
+   * <p>When a match is found, the existing resource is returned.  This means that a higher quality resource may be
+   * returned than the one requested.</p>
    *
    * @param uploadFile  This underlying file should have been returned from {@link Uploads#createUploadFile(com.aoapps.cdn.data.CdnData.ContentType)}.
    *                    If a different file is used, it may not have correct permissions and also may not be able to be moved into place efficiently.
-   *                    <p>
-   *                    The underlying file must have an extension matching {@linkplain ContentType#getExtension() the expected extension for the type}.
-   *                    </p>
-   *                    <p>
-   *                    This underlying file must not be changed after being stored.  Doing so may corrupted the underlying CDN data.
-   *                    </p>
+   *
+   *                    <p>The underlying file must have an extension matching {@linkplain ContentType#getExtension() the expected extension for the type}.</p>
+   *
+   *                    <p>This underlying file must not be changed after being stored.  Doing so may corrupted the underlying CDN data.</p>
    *
    * @return  The resource, whether found existing or stored new.  This resource will be
    *          equivalent to, or higher quality, than the requested resource.  Furthermore, the requested resource is

@@ -1,6 +1,6 @@
 /*
  * ao-cdn-data - API for accessing underlying content delivery network (CDN) data.
- * Copyright (C) 2023  AO Industries, Inc.
+ * Copyright (C) 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -114,9 +114,8 @@ public abstract class DimensionVersion extends Version {
 
   /**
    * {@inheritDoc}.
-   * <p>
-   * Defaults to <code>(width)x(height).(extension)</code>.
-   * </p>
+   *
+   * <p>Defaults to <code>(width)x(height).(extension)</code>.</p>
    */
   @Override
   String getFilename() {
@@ -130,33 +129,27 @@ public abstract class DimensionVersion extends Version {
 
   /**
    * Scales this version to a different resolution, using cached version if previously scaled.
-   * <p>
-   * This will typically be done on {@linkplain Resource#getOriginal() the original version}, but can be performed on
-   * any version.
-   * </p>
-   * <p>
-   * First searches all versions for any of this type and matching dimension.  If found, returns it.
-   * Tracks which version had the highest resolution while performing this search.
-   * </p>
-   * <p>
-   * Will only scale down from the biggest existing resource.  A request to scale up will return the highest resolution
-   * available.
-   * </p>
-   * <p>
-   * Will only perform proportional scaling.  If both {@code width} and {@code height} are specified, returns the
+   *
+   * <p>This will typically be done on {@linkplain Resource#getOriginal() the original version}, but can be performed on
+   * any version.</p>
+   *
+   * <p>First searches all versions for any of this type and matching dimension.  If found, returns it.
+   * Tracks which version had the highest resolution while performing this search.</p>
+   *
+   * <p>Will only scale down from the biggest existing resource.  A request to scale up will return the highest resolution
+   * available.</p>
+   *
+   * <p>Will only perform proportional scaling.  If both {@code width} and {@code height} are specified, returns the
    * largest, possibly scaled, image that fits both the width and the height.  The resulting width or height may be less
    * than the requested scaling, but will not be more.  The user interface could perform letterboxing if needing to fit
-   * into a fix proportion area.
-   * </p>
-   * <p>
-   * {@linkplain Resource#lock(boolean) Locks the resource} while performing the search.  This search should be very quick,
-   * and this locking will prevent duplicate work when performing a new scaling.
-   * </p>
-   * <p>
-   * {@linkplain Csync2#synchronize(java.nio.file.Path...) Synchronizes the cluster}, but only after releasing the lock.
+   * into a fix proportion area.</p>
+   *
+   * <p>{@linkplain Resource#lock(boolean) Locks the resource} while performing the search.  This search should be very quick,
+   * and this locking will prevent duplicate work when performing a new scaling.</p>
+   *
+   * <p>{@linkplain Csync2#synchronize(java.nio.file.Path...) Synchronizes the cluster}, but only after releasing the lock.
    * If different nodes create the same version at the same time, the cluster confict will be resolved through
-   * standard monitoring and administration.
-   * </p>
+   * standard monitoring and administration.</p>
    *
    * @param  width  The desired width or {@code null} for proportional scaling
    * @param  height  The desired height or {@code null} for proportional scaling
@@ -277,9 +270,8 @@ public abstract class DimensionVersion extends Version {
 
   /**
    * Performs scaling of this resource to the new size into the given path.
-   * <p>
-   * When writing the file, it is suggested to {@link OutputStream#flush()} then {@link FileChannel#force(boolean)}.
-   * </p>
+   *
+   * <p>When writing the file, it is suggested to {@link OutputStream#flush()} then {@link FileChannel#force(boolean)}.</p>
    */
   abstract void scaleInto(int newWidth, int newHeight, Path tempFile) throws IOException;
 }

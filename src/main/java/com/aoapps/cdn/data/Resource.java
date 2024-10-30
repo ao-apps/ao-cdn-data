@@ -1,6 +1,6 @@
 /*
  * ao-cdn-data - API for accessing underlying content delivery network (CDN) data.
- * Copyright (C) 2023  AO Industries, Inc.
+ * Copyright (C) 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -43,14 +43,13 @@ import java.util.logging.Level;
  * Derived versions include things like scaling size, reducing quality, change frame rates, bit speeds, and such.
  * Derived versions may be of a different {@linkplain ContentType content type than the original}, such as when
  * a thumbnail image is extracted from the first frame of an mp4.
- * <p>
- * TODO: Versions may have a different content type than the original, such as the first-frame still image for a video
+ *
+ * <p>TODO: Versions may have a different content type than the original, such as the first-frame still image for a video
  * file.  This means that a resource may be access by different extensions, even for original unqualified:
  *           xyz.mp4 would redirect to original version video
  *           xyz.jpg would redirect to version of first frame at original video size
  *           xyz-(width)x(height).mp4 would be scaled video
- *           xyz-(width)x(height).jpg would be scaled first frame
- * </p>
+ *           xyz-(width)x(height).jpg would be scaled first frame</p>
  */
 @SuppressFBWarnings("PI_DO_NOT_REUSE_PUBLIC_IDENTIFIERS_CLASS_NAMES")
 public class Resource {
@@ -119,10 +118,9 @@ public class Resource {
 
   /**
    * Performs an integrity check on a resource.
-   * <p>
-   * {@link #lock(boolean) Locks the resource directory} with shared mode for runtime checks and exclusive mode
-   * when starting-up.
-   * </p>
+   *
+   * <p>{@link #lock(boolean) Locks the resource directory} with shared mode for runtime checks and exclusive mode
+   * when starting-up.</p>
    *
    * @param synchronizePaths Only non-null when in start-up mode and able to make filesystem modifications
    */
@@ -249,9 +247,8 @@ public class Resource {
 
   /**
    * Filters files that are not versions.
-   * <p>
-   * Skips {@link DirectoryLock#LOCK_FILE}, {@link #ORIGINAL_PREFIX}, and {@link CdnData#NEW_EXTENSION}.
-   * </p>
+   *
+   * <p>Skips {@link DirectoryLock#LOCK_FILE}, {@link #ORIGINAL_PREFIX}, and {@link CdnData#NEW_EXTENSION}.</p>
    */
   private static class VersionFilter implements IOPredicate<Path> {
 
@@ -300,10 +297,9 @@ public class Resource {
 
   /**
    * Finds a version matching the binary data and the given type.
-   * <p>
-   * {@linkplain #lock(boolean) Resource locking} not performed since all variants of a resource
-   * are effectively immutable (never modified).
-   * </p>
+   *
+   * <p>{@linkplain #lock(boolean) Resource locking} not performed since all variants of a resource
+   * are effectively immutable (never modified).</p>
    *
    * @param  contentType  The optional content type to filter for or {@code null} for any content type
    */
@@ -339,10 +335,9 @@ public class Resource {
    * Determines the original content type by looking for the "original.(extension)" entry.
    * This is expected to be a symlink to the scaled name pattern, but this is not specifically checked;
    * only filenames are scanned.
-   * <p>
-   * {@linkplain #lock(boolean) Resource locking} not performed since the original version is created for a new resource
-   * then effectively immutable (never modified).
-   * </p>
+   *
+   * <p>{@linkplain #lock(boolean) Resource locking} not performed since the original version is created for a new resource
+   * then effectively immutable (never modified).</p>
    *
    * @throws IllegalArgumentException When unable to determine the content type
    */
@@ -367,10 +362,9 @@ public class Resource {
 
   /**
    * Gets the original version of this resource by following the original symlink and parsing the filename.
-   * <p>
-   * No {@linkplain #lock(boolean) resource locking} required since the original version is created for a new resource
-   * then effectively immutable (never modified).
-   * </p>
+   *
+   * <p>No {@linkplain #lock(boolean) resource locking} required since the original version is created for a new resource
+   * then effectively immutable (never modified).</p>
    */
   public Version getOriginal() throws IOException {
     ContentType originalType = getOriginalContentType();

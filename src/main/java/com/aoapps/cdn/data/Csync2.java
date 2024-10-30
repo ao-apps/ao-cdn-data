@@ -1,6 +1,6 @@
 /*
  * ao-cdn-data - API for accessing underlying content delivery network (CDN) data.
- * Copyright (C) 2023  AO Industries, Inc.
+ * Copyright (C) 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -37,9 +37,9 @@ import java.util.logging.Logger;
 
 /**
  * Synchronization tasks are delegated here.
- * <p>
- * Please note that the following are excluded from synchronization:
- * </p>
+ *
+ * <p>Please note that the following are excluded from synchronization:</p>
+ *
  * <ul>
  * <li>{@link Uploads#UPLOADS_DIR_NAME}</li>
  * <li>{@link CdnData#NEW_EXTENSION}</li>
@@ -86,21 +86,17 @@ class Csync2 {
 
   /**
    * Immediately synchronizes the cluster for the given paths.
-   * <p>
-   * Accesses are serialized (only on instance of Csync2 launched at a time) per distinct Csync2 group.
-   * </p>
-   * <p>
-   * TODO: Coalesce any concurrent requests instead of calling csync2 multiple times?
+   *
+   * <p>Accesses are serialized (only on instance of Csync2 launched at a time) per distinct Csync2 group.</p>
+   *
+   * <p>TODO: Coalesce any concurrent requests instead of calling csync2 multiple times?
    *       Note: In the case of symbolic link removal and re-add, the intermediate synchronization is important, since
    *       csync2 does not currently detect symlink target changes.  This should probably be OK since the removal and
-   *       re-add would be done by the same thread, and thus not coalesced under concurrency.
-   * </p>
-   * <p>
-   * Any errors are logged.  It is expected that cluster state monitoring will catch clustering issues.
-   * </p>
-   * <p>
-   * TODO: Time-out on csync2 process call, using ao-concurrent executors.  Have a clean shutdown that also shuts down executors.
-   * </p>
+   *       re-add would be done by the same thread, and thus not coalesced under concurrency.</p>
+   *
+   * <p>Any errors are logged.  It is expected that cluster state monitoring will catch clustering issues.</p>
+   *
+   * <p>TODO: Time-out on csync2 process call, using ao-concurrent executors.  Have a clean shutdown that also shuts down executors.</p>
    *
    * @param paths  The set of files or directories to synchronize.
    *               Each does not need to exist when synchronizing a deletion.

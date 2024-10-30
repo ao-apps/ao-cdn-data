@@ -1,6 +1,6 @@
 /*
  * ao-cdn-data - API for accessing underlying content delivery network (CDN) data.
- * Copyright (C) 2023  AO Industries, Inc.
+ * Copyright (C) 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -102,9 +102,8 @@ public enum ContentType {
   /**
    * Gets the distinct MIME content type.
    * This is used provided in headers when the resource is requested.
-   * <p>
-   * No corresponding method exists for getting character encoding, since the CDN is only storing binary files.
-   * </p>
+   *
+   * <p>No corresponding method exists for getting character encoding, since the CDN is only storing binary files.</p>
    */
   public abstract String getMimeType();
 

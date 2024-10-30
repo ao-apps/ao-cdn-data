@@ -1,6 +1,6 @@
 /*
  * ao-cdn-data - API for accessing underlying content delivery network (CDN) data.
- * Copyright (C) 2023  AO Industries, Inc.
+ * Copyright (C) 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -39,12 +39,10 @@ import java.util.logging.Logger;
 
 /**
  * A directory is locked by locking on a hidden {@literal Directory#LOCK_FILE} file within the directory.
- * <p>
- * Once created, the lock file is left in-place.  They are empty files and will thus not take any actual extents.
- * </p>
- * <p>
- * The lock files are excluded from {@link Csync2} synchronization.
- * </p>
+ *
+ * <p>Once created, the lock file is left in-place.  They are empty files and will thus not take any actual extents.</p>
+ *
+ * <p>The lock files are excluded from {@link Csync2} synchronization.</p>
  */
 class DirectoryLock implements AutoCloseable {
 
