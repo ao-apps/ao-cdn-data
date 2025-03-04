@@ -1,6 +1,6 @@
 /*
  * ao-cdn-data - API for accessing underlying content delivery network (CDN) data.
- * Copyright (C) 2023, 2024  AO Industries, Inc.
+ * Copyright (C) 2023, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,7 +23,6 @@
 
 package com.aoapps.cdn.data;
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Objects;
@@ -31,9 +30,7 @@ import java.util.Objects;
 /**
  * Only a specific set of content types are supported by the CDN.
  */
-@SuppressFBWarnings("PI_DO_NOT_REUSE_PUBLIC_IDENTIFIERS_CLASS_NAMES")
 public enum ContentType {
-  @SuppressFBWarnings("PI_DO_NOT_REUSE_PUBLIC_IDENTIFIERS_FIELD_NAMES")
   JPEG {
     @Override
     public String getMimeType() {

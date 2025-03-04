@@ -1,6 +1,6 @@
 /*
  * ao-cdn-data - API for accessing underlying content delivery network (CDN) data.
- * Copyright (C) 2023, 2024  AO Industries, Inc.
+ * Copyright (C) 2023, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -25,7 +25,6 @@ package com.aoapps.cdn.data;
 
 import com.aoapps.lang.io.function.IOPredicate;
 import com.aoapps.security.SmallIdentifier;
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -51,7 +50,6 @@ import java.util.logging.Level;
  *           xyz-(width)x(height).mp4 would be scaled video
  *           xyz-(width)x(height).jpg would be scaled first frame</p>
  */
-@SuppressFBWarnings("PI_DO_NOT_REUSE_PUBLIC_IDENTIFIERS_CLASS_NAMES")
 public class Resource {
 
   /**
