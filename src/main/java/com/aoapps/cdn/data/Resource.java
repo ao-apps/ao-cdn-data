@@ -194,8 +194,8 @@ public class Resource {
         if (
             // Lock file already verified during locking
             !DirectoryLock.LOCK_FILE.equals(fileName)
-            // Originals already verified
-            && !fileName.startsWith(ORIGINAL_PREFIX + CdnData.EXTENSION_SEPARATOR)
+              // Originals already verified
+              && !fileName.startsWith(ORIGINAL_PREFIX + CdnData.EXTENSION_SEPARATOR)
         ) {
           // Handle *.new files
           if (fileName.endsWith(CdnData.EXTENSION_SEPARATOR + CdnData.NEW_EXTENSION)) {

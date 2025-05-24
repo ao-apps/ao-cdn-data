@@ -1,6 +1,6 @@
 /*
  * ao-cdn-data - API for accessing underlying content delivery network (CDN) data.
- * Copyright (C) 2023, 2024  AO Industries, Inc.
+ * Copyright (C) 2023, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -81,7 +81,7 @@ final class Fsck {
         String name = FileSystemUtils.getFileName(path);
         if (
             !Resources.RESOURCES_DIR_NAME.equals(name)
-            && !Uploads.UPLOADS_DIR_NAME.equals(name)) {
+              && !Uploads.UPLOADS_DIR_NAME.equals(name)) {
           issues.put(path, new FsckIssue(Level.WARNING, "Unexpected path in cdnRoot"));
         }
       }
