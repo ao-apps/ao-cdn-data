@@ -25,7 +25,7 @@ in multi-master mode for replication.
 * [Project Home](https://oss.aoapps.com/cdn/data/)
 * [Changelog](https://oss.aoapps.com/cdn/data/changelog)
 * [API Docs](https://oss.aoapps.com/cdn/data/apidocs/)
-* [Maven Central Repository](https://central.sonatype.com/artifact/com.aoapps/ao-cdn-data)
+* [Central Repository](https://central.sonatype.com/artifact/com.aoapps/ao-cdn-data)
 * [GitHub](https://github.com/ao-apps/ao-cdn-data)
 
 ## Contact Us
