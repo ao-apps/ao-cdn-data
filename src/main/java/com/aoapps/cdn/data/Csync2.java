@@ -102,7 +102,7 @@ class Csync2 {
    *               Each does not need to exist when synchronizing a deletion.
    *               When {@code null} or empty, nothing is done.
    */
-  void synchronize(Path ... paths) {
+  void synchronize(Path... paths) {
     if (paths != null && paths.length != 0) {
       logger.log(Level.FINE, () ->
           ((group == null) ? "No cluster to synchronize for " : "Synchronizing cluster for ") + Arrays.asList(paths).toString());
