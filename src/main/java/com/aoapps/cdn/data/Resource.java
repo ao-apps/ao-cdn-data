@@ -117,7 +117,7 @@ public class Resource {
   /**
    * Performs an integrity check on a resource.
    *
-   * <p>{@link #lock(boolean) Locks the resource directory} with shared mode for runtime checks and exclusive mode
+   * <p>{@link Resource#lock(boolean) Locks the resource directory} with shared mode for runtime checks and exclusive mode
    * when starting-up.</p>
    *
    * @param synchronizePaths Only non-null when in start-up mode and able to make filesystem modifications
@@ -246,7 +246,7 @@ public class Resource {
   /**
    * Filters files that are not versions.
    *
-   * <p>Skips {@link DirectoryLock#LOCK_FILE}, {@link #ORIGINAL_PREFIX}, and {@link CdnData#NEW_EXTENSION}.</p>
+   * <p>Skips {@link DirectoryLock#LOCK_FILE}, {@link Resource#ORIGINAL_PREFIX}, and {@link CdnData#NEW_EXTENSION}.</p>
    */
   private static class VersionFilter implements IOPredicate<Path> {
 
@@ -296,7 +296,7 @@ public class Resource {
   /**
    * Finds a version matching the binary data and the given type.
    *
-   * <p>{@linkplain #lock(boolean) Resource locking} not performed since all variants of a resource
+   * <p>{@linkplain Resource#lock(boolean) Resource locking} not performed since all variants of a resource
    * are effectively immutable (never modified).</p>
    *
    * @param  contentType  The optional content type to filter for or {@code null} for any content type
@@ -334,7 +334,7 @@ public class Resource {
    * This is expected to be a symlink to the scaled name pattern, but this is not specifically checked;
    * only filenames are scanned.
    *
-   * <p>{@linkplain #lock(boolean) Resource locking} not performed since the original version is created for a new resource
+   * <p>{@linkplain Resource#lock(boolean) Resource locking} not performed since the original version is created for a new resource
    * then effectively immutable (never modified).</p>
    *
    * @throws IllegalArgumentException When unable to determine the content type
@@ -361,7 +361,7 @@ public class Resource {
   /**
    * Gets the original version of this resource by following the original symlink and parsing the filename.
    *
-   * <p>No {@linkplain #lock(boolean) resource locking} required since the original version is created for a new resource
+   * <p>No {@linkplain Resource#lock(boolean) resource locking} required since the original version is created for a new resource
    * then effectively immutable (never modified).</p>
    */
   public Version getOriginal() throws IOException {

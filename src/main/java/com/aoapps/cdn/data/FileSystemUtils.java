@@ -88,7 +88,7 @@ final class FileSystemUtils {
    * @param dir     The directory to create or verify
    * @param mkdirs  Also create parent directories if missing
    *
-   * @see  #makeDirectoryIfNeeded(com.aoapps.cdn.data.Csync2, java.nio.file.Path)
+   * @see  FileSystemUtils#makeDirectoryIfNeeded(com.aoapps.cdn.data.Csync2, java.nio.file.Path)
    */
   static Path makeDirectoryIfNeeded(Csync2 csync2, Path dir, boolean mkdirs) throws IOException {
     if (Files.notExists(dir, LinkOption.NOFOLLOW_LINKS)) {
@@ -114,14 +114,14 @@ final class FileSystemUtils {
    * @param csync2  When not {@code null}, will immediately synchronize the cluster when making a new directory
    * @param dir     The directory to create or verify
    *
-   * @see  #makeDirectoryIfNeeded(com.aoapps.cdn.data.Csync2, java.nio.file.Path, boolean)
+   * @see  FileSystemUtils#makeDirectoryIfNeeded(com.aoapps.cdn.data.Csync2, java.nio.file.Path, boolean)
    */
   static Path makeDirectoryIfNeeded(Csync2 csync2, Path dir) throws IOException {
     return makeDirectoryIfNeeded(csync2, dir, false);
   }
 
   /**
-   * Creates a new temp file with {@link #NEW_FILE_PERMISSIONS}.
+   * Creates a new temp file with {@link FileSystemUtils#NEW_FILE_PERMISSIONS}.
    */
   static Path createTempFile(Path dir, String prefix, ContentType contentType) throws IOException {
     return Files.createTempFile(

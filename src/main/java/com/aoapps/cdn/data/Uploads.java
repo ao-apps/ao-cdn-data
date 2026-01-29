@@ -99,7 +99,7 @@ public class Uploads {
    * @param  contentType  The new file will have {@linkplain ContentType#getExtension() an extension} for the given content type.
    *
    * @see  CdnData#findOrAdd(com.aoapps.cdn.data.UploadFile)
-   * @see  #createUploadFile(com.aoapps.cdn.data.ContentType)
+   * @see  Uploads#createUploadFile(com.aoapps.cdn.data.ContentType)
    */
   public UploadFile createUploadFile(ContentType contentType) throws IOException {
     return new UploadFile(

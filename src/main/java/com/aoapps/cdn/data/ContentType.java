@@ -121,8 +121,8 @@ public enum ContentType {
    * @throws IllegalArgumentException when no content type has the given extension
    * @throws NullPointerException when extension is null
    *
-   * @see #getContentTypeForMimeType(java.lang.String)
-   * @see #valueOf(java.lang.String)
+   * @see ContentType#getContentTypeForMimeType(java.lang.String)
+   * @see ContentType#valueOf(java.lang.String)
    */
   public static ContentType getContentTypeForExtension(String extension) throws IllegalArgumentException, NullPointerException {
     Objects.requireNonNull(extension);
@@ -141,8 +141,8 @@ public enum ContentType {
    * @throws IllegalArgumentException when no content type has the given content type
    * @throws NullPointerException when content type is null
    *
-   * @see #getContentTypeForExtension(java.lang.String)
-   * @see #valueOf(java.lang.String)
+   * @see ContentType#getContentTypeForExtension(java.lang.String)
+   * @see ContentType#valueOf(java.lang.String)
    */
   public static ContentType getContentTypeForMimeType(String mimeType) throws IllegalArgumentException, NullPointerException {
     String trimmed = Objects.requireNonNull(mimeType);

@@ -72,7 +72,7 @@ public class ImageVersion extends DimensionVersion {
    *
    * @throws  IllegalArgumentException when not supported
    *
-   * @see #writeInto(java.awt.image.BufferedImage, java.nio.file.Path)
+   * @see ImageVersion#writeInto(java.awt.image.BufferedImage, java.nio.file.Path)
    * @see ImageIO#write(java.awt.image.RenderedImage, java.lang.String, java.io.OutputStream)
    * @see ImageIO#getWriterFormatNames()
    */

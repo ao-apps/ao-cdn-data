@@ -84,9 +84,9 @@ public class Resources implements Iterable<Resource> {
    *
    * @throws NumberFormatException when not a valid number of lower-case hex characters
    *
-   * @see #parseHash1Name(java.lang.String)
-   * @see #parseHash2Name(java.lang.String)
-   * @see #parseResourceName(java.lang.String)
+   * @see Resources#parseHash1Name(java.lang.String)
+   * @see Resources#parseHash2Name(java.lang.String)
+   * @see Resources#parseResourceName(java.lang.String)
    */
   static long parseHashName(String hashName, int numChars) throws NumberFormatException {
     if (hashName.length() != numChars) {
@@ -103,14 +103,14 @@ public class Resources implements Iterable<Resource> {
   /**
    * Parses a hash1 directory name, case-sensitive.
    * Sets the high-order bits, with the remaining bits all zero.
-   * May be or'ed with the results of {@link #parseHash2Name(java.lang.String)}
-   * and {@link #parseResourceName(java.lang.String)}.
+   * May be or'ed with the results of {@link Resources#parseHash2Name(java.lang.String)}
+   * and {@link Resources#parseResourceName(java.lang.String)}.
    *
    * @throws NumberFormatException when not a valid four-character lower-case hex number
    *
-   * @see #parseHashName(java.lang.String, int)
-   * @see #parseHash2Name(java.lang.String)
-   * @see #parseResourceName(java.lang.String)
+   * @see Resources#parseHashName(java.lang.String, int)
+   * @see Resources#parseHash2Name(java.lang.String)
+   * @see Resources#parseResourceName(java.lang.String)
    */
   static long parseHash1Name(String hash1Name) throws NumberFormatException {
     // First level of most-signifant bits
@@ -120,14 +120,14 @@ public class Resources implements Iterable<Resource> {
   /**
    * Parses a hash2 directory name, case-sensitive.
    * Sets the next-high-order bits, with the remaining bits all zero.
-   * May be or'ed with the results of {@link #parseHash1Name(java.lang.String)}
-   * and {@link #parseResourceName(java.lang.String)}.
+   * May be or'ed with the results of {@link Resources#parseHash1Name(java.lang.String)}
+   * and {@link Resources#parseResourceName(java.lang.String)}.
    *
    * @throws NumberFormatException when not a valid four-character lower-case hex number
    *
-   * @see #parseHashName(java.lang.String, int)
-   * @see #parseHash1Name(java.lang.String)
-   * @see #parseResourceName(java.lang.String)
+   * @see Resources#parseHashName(java.lang.String, int)
+   * @see Resources#parseHash1Name(java.lang.String)
+   * @see Resources#parseResourceName(java.lang.String)
    */
   static long parseHash2Name(String hash2Name) throws NumberFormatException {
     // Second level of most-signifant bits
@@ -137,14 +137,14 @@ public class Resources implements Iterable<Resource> {
   /**
    * Parses a resource directory name, case-sensitive.
    * Sets the lowest order bits, with the remaining bits all zero.
-   * May be or'ed with the results of {@link #parseHash1Name(java.lang.String)}
-   * and {@link #parseHash2Name(java.lang.String)}.
+   * May be or'ed with the results of {@link Resources#parseHash1Name(java.lang.String)}
+   * and {@link Resources#parseHash2Name(java.lang.String)}.
    *
    * @throws NumberFormatException when not a valid four-character lower-case hex number
    *
-   * @see #parseHashName(java.lang.String, int)
-   * @see #parseHash1Name(java.lang.String)
-   * @see #parseHash2Name(java.lang.String)
+   * @see Resources#parseHashName(java.lang.String, int)
+   * @see Resources#parseHash1Name(java.lang.String)
+   * @see Resources#parseHash2Name(java.lang.String)
    */
   static long parseResourceName(String resourceName) throws NumberFormatException {
     // Lowest bits
@@ -430,7 +430,7 @@ public class Resources implements Iterable<Resource> {
   /**
    * Performs an integrity check on the resources directories on start-up.
    *
-   * <p>{@link #lock(boolean) Locks the resources directory} with shared mode for runtime checks and exclusive mode
+   * <p>{@link Resources#lock(boolean) Locks the resources directory} with shared mode for runtime checks and exclusive mode
    * when starting-up.</p>
    *
    * @param synchronizePaths Only non-null when in start-up mode and able to make filesystem modifications
@@ -471,7 +471,7 @@ public class Resources implements Iterable<Resource> {
   /**
    * Adds a new resource, allocating a new *.tmp directory, using the given upload file as the original resource.
    *
-   * <p>Holds {@linkplain #lock(boolean) an exclusive lock} to avoid possibly duplications of new resources.
+   * <p>Holds {@linkplain Resources#lock(boolean) an exclusive lock} to avoid possibly duplications of new resources.
    * New resources are only added by the backoffice administrators, so concurrency is not important.
    * The lock is released, however, before {@linkplain Csync2 synchronizing the cluster}.</p>
    */

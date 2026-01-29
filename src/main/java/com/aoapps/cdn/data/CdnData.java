@@ -60,7 +60,7 @@ public class CdnData {
 
   /**
    * File extension used for new (and possibly partial) directories and files.
-   * Does not include the {@link #EXTENSION_SEPARATOR}.
+   * Does not include the {@link CdnData#EXTENSION_SEPARATOR}.
    * These files are excluded from Csync2 synchronization.
    */
   static final String NEW_EXTENSION = "new";
@@ -73,7 +73,7 @@ public class CdnData {
 
   /**
    * Creates a new CDN data accessor.
-   * An {@linkplain #fsck()} is performed immediately in start-up mode.  Any {@linkplain FsckIssue issue} that is
+   * An {@linkplain CdnData#fsck()} is performed immediately in start-up mode.  Any {@linkplain FsckIssue issue} that is
    * {@linkplain Level#SEVERE severe} or higher will cause the CDN to fail by throwing {@link IOException}.
    *
    * @param cdnRoot  The directory that contains the underlying CDN data.  This should not be in the web root directly,
@@ -87,10 +87,10 @@ public class CdnData {
    * @param isUploader  Is this the uploader instance of cdn-data, which is responsible for introducing entirely new
    *                    resources?
    *
-   * @throws IOException When CDN start-up {@linkplain #fsck()} fails.
+   * @throws IOException When CDN start-up {@linkplain CdnData#fsck()} fails.
    *
-   * @see #fsck()
-   * @see #fsck(boolean)
+   * @see CdnData#fsck()
+   * @see CdnData#fsck(boolean)
    */
   @SuppressFBWarnings("CT_CONSTRUCTOR_THROW")
   public CdnData(Path cdnRoot, String csync2Group, boolean isUploader) throws IOException {
