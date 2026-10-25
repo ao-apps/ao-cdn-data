@@ -1,6 +1,6 @@
 /*
  * ao-cdn-data - API for accessing underlying content delivery network (CDN) data.
- * Copyright (C) 2023  AO Industries, Inc.
+ * Copyright (C) 2023, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -21,7 +21,6 @@
  * along with ao-cdn-data.  If not, see <https://www.gnu.org/licenses/>.
  */
 module com.aoapps.cdn.data {
-  exports com.aoapps.cdn.data;
   // Direct
   requires com.aoapps.collections; // <groupId>com.aoapps</groupId><artifactId>ao-collections</artifactId>
   requires com.aoapps.lang; // <groupId>com.aoapps</groupId><artifactId>ao-lang</artifactId>
@@ -30,4 +29,6 @@ module com.aoapps.cdn.data {
   // Java SE
   requires java.desktop;
   requires java.logging;
+
+  exports com.aoapps.cdn.data;
 }
